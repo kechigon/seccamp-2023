@@ -1,0 +1,11 @@
+services:
+  pstgres:
+    image: postgres:15.3
+    volumes:
+      - $PWD/misc/sql:/docker-entrypoint-initdb.d 
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=seccamp
+    ports:
+      - 5432:5432
+    tty: true
